@@ -1,7 +1,23 @@
-Iron Bundle Delibird
+Literatuur
+How to play MP3 in the background music automatically? (2019, 23 augustus). 
+The freeCodeCamp Forum. 
+https://forum.freecodecamp.org/t/how-to-play-mp3-in-the-background-music-automatically/308554
+
+Can I use an arrow function as the callback for an event listener in JavaScript? (2021, 12 juni). 
+30 Seconds Of Code. 
+https://www.30secondsofcode.org/js/s/arrow-function-event-listeners/
+
+Images
+Favicon:
+https://www.serebii.net/dungeonrescueteamdx/pokemon/225.png
+
+Basic Delibird Skin:
+https://www.pokencyclopedia.info/en/index.php?id=sprites/225
+
+Iron Bundle Delibird Skin:
 https://www.deviantart.com/retronc/art/Iron-Bundle-Sprite-977425811
 
-Shady Delibird
+Shady Delibird Skin:
 https://www.deviantart.com/retronc/art/Shady-Delibird-Sprite-977713817
 
 Background Image:

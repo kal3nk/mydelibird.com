@@ -1,14 +1,20 @@
 //-------------------------------------------consts----------------------------------------------------------------
+//healthSpan en happinessSpan zijn verbonden aan de function updateStatus.
 const healthSpan = document.querySelector('#health');
 const happinessSpan = document.querySelector('#happiness');
+
+//feedButton en playButton zijn verbonden aan interactionFeed/interactionPlay via eventlisteners.
 const feedButton = document.querySelector('#feed');
 const playButton = document.querySelector('#play');
+
+//delibirdSkin is verbonden aan de een arrowfunction via een eventlistener.
 const delibirdSkin = document.querySelector('#delibird');
 
 
 
 
 //-------------------------------------------lets------------------------------------------------------------------
+//health en happiness zijn verbonden aan de healthSpan/happinessSpan via de updateStatus function.
 let health = 100;
 let happiness = 100;
 
@@ -16,12 +22,21 @@ let happiness = 100;
 
 
 //--------------------------------------------functions------------------------------------------------------------
+/* 
+updateStatus zorgt ervoor dat de de healthSpan/happinessSpan is verbonden met de health en 
+happiness let elementen. Hier is het ook meteen verbonden met de checkPetStatus function.
+*/
 function updateStatus() {
     healthSpan.textContent = health;
     happinessSpan.textContent = happiness;
     checkPetStatus();
 }
 
+/*
+checkPetStatus kijkt naar de happiness en health van Delibird, als één/beide minder is dan of 
+gelijk aan 0% is dan komt er een alert van de browser. 
+Ook worden de feedButton en playButton gedisabled, of te wel je Delibird is dan "dood".
+*/
 function checkPetStatus() {
     if (health <= 0 || happiness <= 0) {
         health = 0;
@@ -29,10 +44,13 @@ function checkPetStatus() {
         alert("Oh no! Delibird has fainted, reload to play again!");
         feedButton.disabled = true;
         playButton.disabled = true;
-        delibirdSkin.disabled = true;
     }
 }
 
+/*
+interactionFeed vermeert health met 10% elke keer als je op de FeedButton klikt.
+De functie wordt getriggerd met eventlistener "feedButton" 'click'.
+*/
 function interactionFeed() {
     if (health < 101) {
         health += 10;
@@ -43,6 +61,10 @@ function interactionFeed() {
     }
 }
 
+/*
+interactionPlay vermeert happiness met 10% elke keer als je op de playButton klikt.
+De functie wordt getriggerd met eventlistener "playButton" 'click'.
+*/
 function interactionPlay() {
     if (happiness < 101) {
         happiness += 10;
@@ -56,6 +78,10 @@ function interactionPlay() {
     updateStatus();
 }
 
+/*
+decreaseHappiness vermindert de happiness met 1%.
+De functie wordt getriggerd met een setInterval later in de code.
+*/
 function decreaseHappiness () {
     if (happiness > 0) {
         happiness -= 1;
@@ -71,19 +97,9 @@ The freeCodeCamp Forum.
 https://forum.freecodecamp.org/t/how-to-play-mp3-in-the-background-music-automatically/308554
 */
 
-/* Dit is de main control function voor het gehele opvolgende rijtje van functions.
-In de function zit een eventlistener waarmee als je er op klikt dan de functie toggleMusic
-wordt aangewakkert. Hierin zitten de volgende twee functies ook backgroundMusic en musicButton.
-*/
-function initializeMusicControl() {
-    musicButton.addEventListener('click', handleMusicButtonClick);
-}
 
-function handleMusicButtonClick() {
-    toggleMusic(backgroundMusic, musicButton);
-}
-
-/*Toggle functie zorgt voor de twee verschillende opties, namelijk pauzeren als het afgespeeld
+/*
+Toggle functie zorgt voor de twee verschillende opties, namelijk pauzeren als het afgespeeld
 wordt. En afspeelt als het gepauzeerd is
 */
 function toggleMusic(backgroundMusic, musicButton) {
@@ -125,15 +141,20 @@ playButton.addEventListener('click', interactionPlay);
 // Decrease Happiness mechanic, elke halve seconde gaat er 1% happiness af.
 setInterval(decreaseHappiness, 500);
 
+/*
+Arrow function eventlisteneres met hulp gemaakt van
+Can I use an arrow function as the callback for an event listener in JavaScript? (2021, 12 juni). 
+30 Seconds Of Code. 
+https://www.30secondsofcode.org/js/s/arrow-function-event-listeners/
+*/
+
 // Met deze event listener kan je een skin selecteren in 'My Delibird'
 document.querySelector('#selectSkin').addEventListener('change', (e) => {
     delibirdSkin.src = e.target.value;
 });
 
-// Met deze event listener zorg je er voor dat de initialize music control function werkt
-document.addEventListener("DOMContentLoaded", function() {
-    initializeMusicControl();
-});
+//Met deze eventlistener trigger je de musicButton die er voor zorgt dat de music control functioneel is.
+musicButton.addEventListener('click', () => toggleMusic(backgroundMusic, musicButton));
 
 // Automatische update voor health/happiness procenten
 updateStatus();

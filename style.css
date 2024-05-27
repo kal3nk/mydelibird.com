@@ -1,0 +1,64 @@
+body {
+    font-family: Connection II;
+    text-align: center;
+    background-image: url(images/background.jpg);
+}
+
+h1 {
+    color: azure;
+    font-family: EightBitDragon;
+    text-shadow: 1px 1px black;
+    font-size: 40px;
+}
+
+div {
+    color: azure;
+    text-shadow: 1px 1px black;
+}
+
+#pet-info {
+    margin: 20px;
+    font-size: 24px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-family: Connection II;
+}
+
+div button {
+    font-size: 16px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-family: Connection II;
+}
+
+
+select {
+    cursor: pointer;
+    font-family: Connection II;
+    font-size: 16px;
+    padding: 5px;
+}
+
+label {
+    color: azure;
+    text-shadow: 1px 1px black;
+    font-size: 20px;
+}
+
+
+  /*Fonts*/
+  @font-face {
+    font-family: Connection II;
+    src: url(fonts/ConnectionIi-2wj8.otf);
+  }
+
+  @font-face {
+    font-family: EightBitDragon;
+    src: url(fonts/EightBitDragon-anqx.ttf);
+  }

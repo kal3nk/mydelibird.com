@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Delibird</title>
+    <link rel="icon" type="image/x-icon" href="images/faviconDelibird.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>My Delibird</h1>
+    <div id="pet-info">
+        <p>Health: <span id="health">100</span>%</p>
+        <p>Happiness: <span id="happiness">100</span>%</p>
+    </div>
+    <p>
+        <img src="images/basic.gif"
+        alt="Basic Delibird, cute little guy with his usual red and white feathers."
+        id="delibird"
+        width="250">
+    </p>
+    <div>
+    <button id="play">Play</button>
+    <button id="feed">Feed</button>
+    </div>
+    <audio id=backgroundMusic src="audio/amitySquare.mp3" loop></audio>
+    <section>
+        <label for="selectSkin">Select Skin:</label>
+        <select id="selectSkin">
+            <option value="images/basic.gif">Basic</option>
+            <option value="images/shadySkin.gif">Shady</option>
+            <option value="images/IronBundle.gif">Iron Bundle</option>
+        </select>
+        <button id="musicButton">Play Music</button>
+    </section>
+</body>
+</html>

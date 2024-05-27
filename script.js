@@ -51,7 +51,7 @@ function interactionPlay() {
         happiness = 100;
     }
     if(health > 0) {
-        health -= 5; // Playing makes the pet a bit tired
+        health -= 5; // Spelen zorgt voor een vermoeide Delibird
     }
     updateStatus();
 }
@@ -94,6 +94,14 @@ function toggleMusic(backgroundMusic, musicButton) {
     }
 }
 
+/*
+Deze function verandert de textcontent van de button, of te wel, als je de pauseMusic/playMusic function
+aanwakkert wordt er een update gestuurd naar de updateButtonText en verandert dus de text in de button.
+*/
+function updateButtonText(button, text) {
+    button.textContent = text;
+}
+
 //Met deze functie kan je als je music button aanklikt de muziek afspelen
 function playMusic(backgroundMusic, musicButton) {
     backgroundMusic.play();
@@ -104,14 +112,6 @@ function playMusic(backgroundMusic, musicButton) {
 function pauseMusic(backgroundMusic, musicButton) {
     backgroundMusic.pause();
     updateButtonText(musicButton, 'Play Music');
-}
-
-/*
-Deze function verandert de textcontent van de button, of te wel, als je de pauseMusic/playMusic function
-aanwakkert wordt er een update gestuurd naar de updateButtonText en verandert dus de text in de button.
-*/
-function updateButtonText(button, text) {
-    button.textContent = text;
 }
 
 
